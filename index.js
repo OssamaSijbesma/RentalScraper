@@ -3,9 +3,15 @@ import {
   scrapeInterhouse,
   scrapeFunda,
   scrapePararius,
+  scrapeSpots4You,
 } from './scraper/index.js';
 
-const scrapers = [scrapeInterhouse, scrapeFunda, scrapePararius];
+const scrapers = [
+  scrapeSpots4You,
+  scrapeInterhouse,
+  scrapeFunda,
+  scrapePararius,
+];
 
 // IIFE
 (async () => {
