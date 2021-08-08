@@ -15,19 +15,21 @@ const scrapers = [scrapeInterhouse, scrapeFunda, scrapePararius];
     slowMo: 100, // Slows down puppeteer (No bot speed!)
   });
 
+  console.log('Scrape the internet...');
   await Promise.all(
     scrapers.map(async (scrapeFunction) => {
-      console.log('Opening a new page...');
+      // Open a new page
       const page = await browser.newPage();
       await page.setViewport({ width: 1200, height: 1000 });
 
       // Start scraping.
       await scrapeFunction(page);
 
-      console.log('Closing the page...');
+      // Close the page
       await page.close();
     })
   );
 
+  console.log('Close the browser...');
   await browser.close();
 })();
