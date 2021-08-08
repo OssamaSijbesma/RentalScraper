@@ -1,7 +1,11 @@
 import Puppeteer from 'puppeteer';
-import { scrapeFunda, scrapePararius } from './scraper/index.js';
+import {
+  scrapeInterhouse,
+  scrapeFunda,
+  scrapePararius,
+} from './scraper/index.js';
 
-const scrapers = [scrapeFunda, scrapePararius];
+const scrapers = [scrapeInterhouse, scrapeFunda, scrapePararius];
 
 // IIFE
 (async () => {
