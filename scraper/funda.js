@@ -1,17 +1,22 @@
 export async function scrapeFunda(page) {
-    const url = 'https://www.funda.nl/huur/gemeente-amersfoort/0-900/sorteer-datum-af/';
+  const url =
+    'https://www.funda.nl/huur/gemeente-amersfoort/0-900/sorteer-datum-af/';
 
-    console.log(`Navigate to ${url}.`);
+  try {
+    // Navigate to the page
     await page.goto(url, { waitUntil: 'domcontentloaded' });
 
-    // Get all the urls on the page
+    // Get all the urls on the page.
     const urls = await page.$$eval('div.search-result-media', (content) => {
-        const link = content.map(el => el.querySelector('a').href);
-        return link;
+      const fetchedLink = content.map((el) => el.querySelector('a').href);
+      return fetchedLink;
     });
 
-    urls.forEach(link => {
-        if(!link.includes('parkeergelegenheid'))
-            console.log(link);
+    urls.slice(0, 2).forEach((link) => {
+      // Output all links.
+      if (!link.includes('parkeergelegenheid')) console.log(link);
     });
+  } catch (error) {
+    console.warn(error);
+  }
 }
