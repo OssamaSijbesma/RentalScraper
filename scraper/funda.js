@@ -1,6 +1,5 @@
-export async function scrapeFunda(page) {
-  const url =
-    'https://www.funda.nl/huur/gemeente-amersfoort/0-900/sorteer-datum-af/';
+export async function scrapeFunda(page, { location, min, max }) {
+  const url = `https://www.funda.nl/huur/gemeente-${location}/${min}-${max}/sorteer-datum-af/`;
 
   try {
     // Navigate to the page

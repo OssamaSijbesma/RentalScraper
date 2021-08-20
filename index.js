@@ -29,7 +29,11 @@ const scrapers = [
       await page.setViewport({ width: 1200, height: 1000 });
 
       // Start scraping.
-      await scrapeFunction(page);
+      await scrapeFunction(page, {
+        location: 'amersfoort',
+        min: 400,
+        max: 800,
+      });
 
       // Close the page
       await page.close();

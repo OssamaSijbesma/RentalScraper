@@ -1,9 +1,10 @@
-export async function scrapePararius(page) {
-  const url = 'https://www.pararius.nl/huurwoningen/amersfoort/0-900';
+export async function scrapePararius(page, { location, min, max }) {
+  const url = `https://www.pararius.nl/huurwoningen/${location}/${min}-${max}`;
 
   // Create comparison date
   let startDate = new Date();
   startDate.setDate(startDate.getDate() - 2);
+  console.log(url);
 
   try {
     // Navigate to the page

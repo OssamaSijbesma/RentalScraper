@@ -1,7 +1,7 @@
-export async function scrapeInterhouse(page) {
-  const url =
-    'https://interhouse.nl/huurwoningen/?search_terms=amersfoort&maximum_price=900&number_of_results=20&sort=date-desc&display=list';
+export async function scrapeInterhouse(page, { location, max }) {
+  const url = `https://interhouse.nl/huurwoningen/?search_terms=${location}&maximum_price=${max}&number_of_results=20&sort=date-desc&display=list`;
 
+  console.log(url);
   try {
     // Navigate to the page
     await page.goto(url, { waitUntil: 'networkidle0' });

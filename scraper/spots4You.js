@@ -1,6 +1,5 @@
-export async function scrapeSpots4You(page) {
-  const url =
-    'https://spots4you.com/en/nl/spaces/living/1?country=NL&city=Amersfoort';
+export async function scrapeSpots4You(page, { location }) {
+  const url = `https://spots4you.com/en/nl/spaces/living/1?country=NL&city=${location}`;
 
   try {
     // Navigate to the page
