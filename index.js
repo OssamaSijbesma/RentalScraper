@@ -4,6 +4,8 @@ import {
   scrapeFunda,
   scrapePararius,
   scrapeSpots4You,
+  scrapeDomica,
+  scrapeKamernet,
 } from './scraper/index.js';
 
 const scrapers = [
@@ -11,6 +13,8 @@ const scrapers = [
   scrapeInterhouse,
   scrapeFunda,
   scrapePararius,
+  scrapeDomica,
+  // scrapeKamernet,
 ];
 
 // IIFE
@@ -30,7 +34,7 @@ const scrapers = [
 
       // Start scraping.
       await scrapeFunction(page, {
-        location: 'amersfoort',
+        location: 'zwolle',
         min: 400,
         max: 800,
       });

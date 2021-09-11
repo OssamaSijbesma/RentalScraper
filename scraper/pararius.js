@@ -4,7 +4,6 @@ export async function scrapePararius(page, { location, min, max }) {
   // Create comparison date
   let startDate = new Date();
   startDate.setDate(startDate.getDate() - 2);
-  console.log(url);
 
   try {
     // Navigate to the page
